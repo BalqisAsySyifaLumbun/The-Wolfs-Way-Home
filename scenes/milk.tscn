@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bo6c8eqakc330"]
+
+[ext_resource type="Script" path="res://scripts/milk.gd" id="1_mxi6y"]
+[ext_resource type="Texture2D" uid="uid://ogey374swbxd" path="res://assets/items/cowmilk.png" id="1_ywowg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h02q2"]
+size = Vector2(78, 50)
+
+[node name="Milk" type="Area2D"]
+script = ExtResource("1_mxi6y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = -2.03505
+texture = ExtResource("1_ywowg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, -4)
+shape = SubResource("RectangleShape2D_h02q2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

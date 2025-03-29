@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpvp0vdngpe27"]
+
+[ext_resource type="Texture2D" uid="uid://bbjyj475pqha1" path="res://assets/background/white.png" id="1_dkm0t"]
+[ext_resource type="AudioStream" uid="uid://bysdi2hhlrwd0" path="res://assets/ost/The-Forest.ogg" id="2_t4uni"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="White" type="Sprite2D" parent="."]
+position = Vector2(62, 99)
+texture = ExtResource("1_dkm0t")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_t4uni")
+volume_db = 24.0
+autoplay = true

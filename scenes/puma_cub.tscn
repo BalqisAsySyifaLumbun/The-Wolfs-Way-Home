@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://xmqdkuslgo5u"]
+
+[ext_resource type="Texture2D" uid="uid://br7fe3uxs33he" path="res://assets/puma/pumacub.png" id="1_7r3a7"]
+[ext_resource type="Script" path="res://scripts/puma_cub.gd" id="1_hljfi"]
+[ext_resource type="Texture2D" uid="uid://c8mhvvkvye0ro" path="res://assets/puma/pumacub2.png" id="2_0rcy8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mvpxo"]
+size = Vector2(231, 79)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tmmgy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7r3a7")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_0rcy8")
+}],
+"loop": true,
+"name": &"thank",
+"speed": 5.0
+}]
+
+[node name="PumaCub" type="Area2D"]
+script = ExtResource("1_hljfi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(10.5, 13.5)
+shape = SubResource("RectangleShape2D_mvpxo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 0.174533
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_tmmgy")
+animation = &"idle"
+autoplay = "idle"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

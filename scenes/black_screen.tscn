@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgus8xkmst6eh"]
+
+[ext_resource type="Texture2D" uid="uid://cll0l72ys8tac" path="res://assets/ground/ground.png" id="1_ys8pg"]
+[ext_resource type="Script" path="res://scripts/black_screen.gd" id="2_qt65f"]
+
+[node name="BlackScreen" type="Sprite2D"]
+position = Vector2(11063, -98)
+scale = Vector2(4.92, 3.46)
+texture = ExtResource("1_ys8pg")
+script = ExtResource("2_qt65f")

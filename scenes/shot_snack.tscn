@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsb1b7m3lvvp8"]
+
+[ext_resource type="Texture2D" uid="uid://btit035yd6edk" path="res://assets/items/shot.png" id="1_bxrx5"]
+[ext_resource type="Script" path="res://scripts/shot_snack.gd" id="1_nv2l2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_innxq"]
+size = Vector2(91, 84)
+
+[node name="ShotSnack" type="Area2D"]
+script = ExtResource("1_nv2l2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = -0.47822
+skew = -0.296706
+texture = ExtResource("1_bxrx5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-8.5, -1)
+shape = SubResource("RectangleShape2D_innxq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

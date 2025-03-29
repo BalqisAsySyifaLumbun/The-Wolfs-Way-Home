@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://c481cdnwa3ofd"]
+
+[ext_resource type="Script" path="res://scripts/dialog_area_2.gd" id="1_lkrhq"]
+[ext_resource type="Texture2D" uid="uid://bur2l43raw4nm" path="res://assets/items/sign.png" id="2_4pf3h"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hh7gy"]
+radius = 66.0
+height = 612.0
+
+[node name="Dialog Area 2" type="Area2D"]
+position = Vector2(13952, -136)
+script = ExtResource("1_lkrhq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 133)
+shape = SubResource("CapsuleShape2D_hh7gy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 171)
+texture = ExtResource("2_4pf3h")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

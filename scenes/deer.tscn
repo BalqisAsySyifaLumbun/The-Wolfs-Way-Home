@@ -1,0 +1,157 @@
+[gd_scene load_steps=9 format=3 uid="uid://cbfwetrg6coyq"]
+
+[ext_resource type="Texture2D" uid="uid://brx46e8lp6v3r" path="res://assets/deer/deer1.png" id="1_kia8y"]
+[ext_resource type="Texture2D" uid="uid://dcyo6761dikwl" path="res://assets/deer/export202503151926339785.png" id="1_x6d7f"]
+[ext_resource type="Texture2D" uid="uid://5idaupk427a4" path="res://assets/deer/deer2.png" id="2_b6hie"]
+[ext_resource type="Texture2D" uid="uid://b37g4uxw4fft7" path="res://assets/deer/export202503151922447790.png" id="2_ehca1"]
+[ext_resource type="Texture2D" uid="uid://cpwfarnm5krva" path="res://assets/deer/deer3.png" id="3_ckfa6"]
+[ext_resource type="Texture2D" uid="uid://bdmony23m0lfw" path="res://assets/deer/export202503151932212532.png" id="3_lcxv8"]
+[ext_resource type="Texture2D" uid="uid://bj1ilfw1j65or" path="res://assets/deer/deer4.png" id="4_gj0hp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wjibo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_x6d7f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ehca1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ehca1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ehca1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ehca1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ehca1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_x6d7f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_x6d7f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_x6d7f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_x6d7f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_x6d7f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lcxv8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lcxv8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lcxv8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lcxv8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lcxv8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lcxv8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lcxv8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lcxv8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lcxv8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lcxv8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lcxv8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lcxv8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lcxv8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lcxv8")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_kia8y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_kia8y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_kia8y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_kia8y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_kia8y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_b6hie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_b6hie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_b6hie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ckfa6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ckfa6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ckfa6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gj0hp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gj0hp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_kia8y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_kia8y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_kia8y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_kia8y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gj0hp")
+}],
+"loop": true,
+"name": &"idle_old",
+"speed": 4.0
+}]
+
+[node name="Deer" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_wjibo")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.899034

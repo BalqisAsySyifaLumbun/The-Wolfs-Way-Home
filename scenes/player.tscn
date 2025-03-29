@@ -1,0 +1,85 @@
+[gd_scene load_steps=12 format=3 uid="uid://2owvr27bi2iq"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_6rf81"]
+[ext_resource type="Texture2D" uid="uid://blqgl78f8yj1g" path="res://assets/wolf/wolf idle.png" id="2_qm7w0"]
+[ext_resource type="Texture2D" uid="uid://b4djqo7bp7so4" path="res://assets/wolf/wolf7.png" id="3_4ygkc"]
+[ext_resource type="Texture2D" uid="uid://blkysdhi117xs" path="res://assets/wolf/wolf1.png" id="4_0lg76"]
+[ext_resource type="Texture2D" uid="uid://cff55c4hjevsd" path="res://assets/wolf/wolf2.png" id="5_5c1nj"]
+[ext_resource type="Texture2D" uid="uid://canaklnn4wqh" path="res://assets/wolf/wolf3.png" id="6_k1iki"]
+[ext_resource type="Texture2D" uid="uid://cehiakqytybde" path="res://assets/wolf/wolf4.png" id="7_07s52"]
+[ext_resource type="Texture2D" uid="uid://qk2exsuj1267" path="res://assets/wolf/wolf5.png" id="8_w1bwy"]
+[ext_resource type="Texture2D" uid="uid://co5i8hkeefinf" path="res://assets/wolf/wolf6.png" id="9_tnry1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jarwx"]
+size = Vector2(269.5, 128.5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ltom1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qm7w0")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_0lg76")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_0lg76")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5c1nj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_k1iki")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_07s52")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_w1bwy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_tnry1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4ygkc")
+}],
+"loop": true,
+"name": &"run",
+"speed": 11.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_6rf81")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-33.75, -4.25)
+shape = SubResource("RectangleShape2D_jarwx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-22, -41)
+sprite_frames = SubResource("SpriteFrames_ltom1")
+animation = &"run"
+autoplay = "idle"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
+offset_left = -240.0
+offset_top = -241.0
+offset_right = 265.0
+offset_bottom = -208.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
+text = "Terms Found:"
+tab_size = 8

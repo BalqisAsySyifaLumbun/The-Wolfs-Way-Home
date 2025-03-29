@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7jjjaek1rink"]
+
+[ext_resource type="Texture2D" uid="uid://bweio75no5ywq" path="res://assets/items/garsign.png" id="1_7pksc"]
+[ext_resource type="Script" path="res://scripts/garshop.gd" id="1_kdit5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cglgb"]
+size = Vector2(1178, 511)
+
+[node name="garshop" type="Area2D"]
+script = ExtResource("1_kdit5")
+
+[node name="Garsign" type="Sprite2D" parent="."]
+position = Vector2(585, 256)
+scale = Vector2(0.782667, 0.6375)
+texture = ExtResource("1_7pksc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(579, 245.5)
+shape = SubResource("RectangleShape2D_cglgb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
