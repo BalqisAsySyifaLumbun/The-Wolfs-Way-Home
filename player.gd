@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-@export var run_speed = 400
-@export var gravity = 620.0
+@export var run_speed = 500
+@export var gravity = 700.0
 @export var jump_speed = -500
 @onready var sprite_2d = $AnimatedSprite2D
 @onready var text_2d = $RichTextLabel
@@ -49,11 +49,15 @@ func _physics_process(delta):
 
 		elif Input.is_action_pressed("ui_left"):
 			velocity.x = -run_speed
+			if Input.is_key_pressed(KEY_SPACE):
+				velocity.x = -run_speed * 1.5
 			sprite_2d.flip_h = true
 			sprite_2d.animation = "run"
 			
 		elif Input.is_action_pressed("ui_right"):
 			velocity.x = run_speed
+			if Input.is_key_pressed(KEY_SPACE):
+				velocity.x = run_speed * 1.5
 			sprite_2d.flip_h = false
 			sprite_2d.animation = "run"
 			
