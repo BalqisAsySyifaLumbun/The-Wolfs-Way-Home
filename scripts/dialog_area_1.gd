@@ -28,21 +28,21 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.get_name() == "Player":
 		print("Player entered Area2D")
-		if "shot" in body.get_database() and dialog_three_ran == true:
+		if "shot" in Global.get_database() and dialog_three_ran == true:
 			Dialogic.start("dialog_4")
-		if "shot" in body.get_database() and dialog_three_ran == false:  # Check if player has the get_database method
+		if "shot" in Global.get_database() and dialog_three_ran == false:  # Check if player has the get_database method
 			if dialog_one_ran == true:
 				Dialogic.start("dialog_3")
 				dialog_three_ran = true
 			else:
 				Dialogic.start("dialog_1")
-				body.set_database("word")
+				Global.set_database("word")
 				dialog_one_ran = true
-		elif "word" in body.get_database():  # Check if player has the get_database method
-			if "shot" not in body.get_database():
+		elif "word" in Global.get_database():  # Check if player has the get_database method
+			if "shot" not in Global.get_database():
 				Dialogic.start("dialog_2")
 				dialog_two_ran = true
 		else:
 			Dialogic.start("dialog_1")
-			body.set_database("word")
+			Global.set_database("word")
 			dialog_one_ran = true

@@ -22,7 +22,7 @@ func _on_body_entered(body: Node2D) -> void:
 			Dialogic.start("dialog_puma_dying")
 			dialog_puma_init_ran = true
 		else:
-			if "milk" in body.get_database():
+			if "milk" in Global.get_database():
 				sprite.animation = "thank"
 				if dialog_puma_thx_ran == false:
 					Dialogic.start("dialog_puma_thanks")

@@ -1,9 +1,9 @@
 extends Area2D
 
-@onready var garsign = $CollisionShape2D
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	$CollisionShape2D/CanvasLayer2/Label.visible = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -13,8 +13,5 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.get_name() == "Player":
-		print("Player entered Area2D")
-		if "gar" not in Global.get_database():
-			Dialogic.start("monolog_gar")
-			Global.set_database("gar")
-			Global.set_database("shop")
+		$CollisionShape2D/CanvasLayer2/Label.visible = true # Replace with function body.
+		Global.is_counting = true

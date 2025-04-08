@@ -14,9 +14,9 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.get_name() == "Player":
 		print("Player entered Area2D")
-		if "shot" not in body.get_database():  # Check if player has the get_database method
+		if "shot" not in Global.get_database():  # Check if player has the get_database method
 			Dialogic.start("dialog_pickup")
-			body.set_database("shot")
+			Global.set_database("shot")
 			snack.visible = false
 		else:
 			snack.visible = false

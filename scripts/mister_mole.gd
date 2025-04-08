@@ -15,11 +15,4 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.get_name() == "Player":
 		print("Player entered Area2D")
-		if "cow" not in Global.get_database():
-			Dialogic.start("dialog_pickup")
-			
-			Global.set_database("cow")
-			Global.set_database("milk")
-			sprite.visible = false
-		else:
-			sprite.visible = false
+		Dialogic.start("mine_mole_talk")

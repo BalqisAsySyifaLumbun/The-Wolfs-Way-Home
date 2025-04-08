@@ -27,8 +27,8 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.get_name() == "Player":
-		if "stop" not in body.get_database():
+		if "stop" not in Global.get_database():
 			Dialogic.start("dialog_pickup")
-			body.set_database("stop")
+			Global.set_database("stop")
 		else:
 			Dialogic.start("monolog_stopsign")

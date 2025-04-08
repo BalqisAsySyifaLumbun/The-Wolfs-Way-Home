@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://dwe5c15fbtkr8"]
+[gd_scene load_steps=22 format=4 uid="uid://dwe5c15fbtkr8"]
 
 [ext_resource type="PackedScene" uid="uid://2owvr27bi2iq" path="res://scenes/player.tscn" id="1_j42yt"]
 [ext_resource type="Texture2D" uid="uid://bbjyj475pqha1" path="res://assets/background/white.png" id="1_sy0fs"]
@@ -15,6 +15,9 @@
 [ext_resource type="PackedScene" uid="uid://bo6c8eqakc330" path="res://scenes/milk.tscn" id="13_yk3n4"]
 [ext_resource type="PackedScene" uid="uid://bcpnolmmgwsyl" path="res://scenes/dialog_area_4.tscn" id="14_7bjxa"]
 [ext_resource type="PackedScene" uid="uid://xmqdkuslgo5u" path="res://scenes/puma_cub.tscn" id="15_3v1gc"]
+[ext_resource type="PackedScene" uid="uid://ulf7ej5jh4x1" path="res://scenes/canvas_layer.tscn" id="16_thtuy"]
+[ext_resource type="Script" path="res://scripts/rangerbox.gd" id="17_7hddv"]
+[ext_resource type="Script" path="res://scripts/canvas_gui_layer.gd" id="17_qa67w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y032a"]
 texture = ExtResource("2_gsarl")
@@ -85,6 +88,9 @@ tile_size = Vector2i(128, 128)
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_y032a")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_on1d2"]
+size = Vector2(563, 228)
+
 [node name="Scene1" type="Node2D"]
 position = Vector2(-1, 0)
 
@@ -138,3 +144,17 @@ pitch_scale = 1.1
 autoplay = true
 
 [node name="Dialog Area 4" parent="." instance=ExtResource("14_7bjxa")]
+
+[node name="CanvasLayer" parent="." instance=ExtResource("16_thtuy")]
+script = ExtResource("17_qa67w")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(16660, 147)
+script = ExtResource("17_7hddv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(13.5, -6)
+shape = SubResource("RectangleShape2D_on1d2")
+
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

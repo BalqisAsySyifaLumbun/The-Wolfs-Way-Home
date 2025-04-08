@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmrn770pei5hg"]
+
+[ext_resource type="Texture2D" uid="uid://cll0l72ys8tac" path="res://assets/ground/ground.png" id="1_p7lyp"]
+[ext_resource type="Script" path="res://try_again_scene.gd" id="2_s601n"]
+
+[node name="Node2D" type="Sprite2D"]
+position = Vector2(1013.5, 571)
+scale = Vector2(2.53375, 1.4275)
+texture = ExtResource("1_p7lyp")
+script = ExtResource("2_s601n")

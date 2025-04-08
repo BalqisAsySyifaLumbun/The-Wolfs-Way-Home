@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://l14qd1eooloq" path="res://assets/items/lift.png" id="1_tyi8d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hjk8g"]
-size = Vector2(349.263, 1302.78)
+size = Vector2(222.031, 1302.78)
 
 [node name="Lift Area" type="Area2D"]
 position = Vector2(-978, 2299)

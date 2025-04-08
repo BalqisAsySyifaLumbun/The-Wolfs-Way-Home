@@ -15,7 +15,7 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.get_name() == "Player":
 		print("Player entered Area2D")
-		if "stop" not in body.get_database():
+		if "stop" not in Global.get_database():
 			Dialogic.start("monolog_stop") # Replace with your dialog code.
 		else:
 			# Hide the TileMap and CollisionShape2D

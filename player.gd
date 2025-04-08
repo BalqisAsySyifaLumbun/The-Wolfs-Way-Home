@@ -21,16 +21,16 @@ func _physics_process(delta):
 	
 	velocity.y += gravity * delta  
 	
-	if Input.is_key_pressed(KEY_Y):
-		var text_output = "Terms Found: " 
-		for word in get_database():
-			if word != "word" and word != "Terms Found: ":
-				word = word.to_upper()
-				text_output += word + " - "
-		text_2d.text = text_output
-		text_2d.visible = true
-	elif Input.is_key_pressed(KEY_Z):
-		text_2d.visible = false
+	#if Input.is_key_pressed(KEY_Y):
+		#var text_output = "Terms Found: " 
+		#for word in get_database():
+			#if word != "word" and word != "Terms Found: ":
+				#word = word.to_upper()
+				#text_output += word + " - "
+		#text_2d.text = text_output
+		#text_2d.visible = true
+	#elif Input.is_key_pressed(KEY_Z):
+		#text_2d.visible = false
 		
 
 	if is_on_floor() == false:

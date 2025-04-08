@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfsrbx8wjctba"]
+
+[ext_resource type="Texture2D" uid="uid://cexrv0pnpvoy" path="res://assets/items/wordoard.png" id="1_pqh4j"]
+[ext_resource type="Script" path="res://scripts/label.gd" id="1_r6hrk"]
+
+[node name="GUI" type="MarginContainer"]
+offset_right = 336.0
+offset_bottom = 262.0
+
+[node name="Wordboard" type="Sprite2D" parent="."]
+position = Vector2(126, 249)
+texture = ExtResource("1_pqh4j")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+script = ExtResource("1_r6hrk")
