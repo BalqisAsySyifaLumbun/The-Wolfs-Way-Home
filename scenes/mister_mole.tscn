@@ -4,14 +4,18 @@
 [ext_resource type="Texture2D" uid="uid://cyal5s2xa6jy3" path="res://assets/mrmole/mr mole.png" id="2_0dtmi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5j15h"]
-size = Vector2(219, 332)
+size = Vector2(352, 140)
 
 [node name="Mister_mole" type="Area2D"]
 script = ExtResource("1_kiiw7")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-74, 104)
+shape = SubResource("RectangleShape2D_5j15h")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-78.5, 108)
+scale = Vector2(0.476667, 0.46)
 texture = ExtResource("2_0dtmi")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 8)
-shape = SubResource("RectangleShape2D_5j15h")
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

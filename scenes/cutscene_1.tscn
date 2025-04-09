@@ -1,0 +1,98 @@
+[gd_scene load_steps=10 format=3 uid="uid://sux23hx4a3hx"]
+
+[ext_resource type="Texture2D" uid="uid://b7nwhptqixv7b" path="res://assets/cutscenes/Type1.png" id="1_2u0v6"]
+[ext_resource type="Script" path="res://scripts/cutscene_1.gd" id="1_rlcg2"]
+[ext_resource type="Texture2D" uid="uid://i156o6yxnptc" path="res://assets/cutscenes/Type2.png" id="2_xc7jc"]
+[ext_resource type="PackedScene" uid="uid://dfsrbx8wjctba" path="res://scenes/gui.tscn" id="4_wh8fp"]
+[ext_resource type="Script" path="res://scripts/check_1_onclick.gd" id="5_yr6ar"]
+[ext_resource type="Texture2D" uid="uid://nx0c0lg0uogx" path="res://assets/cutscenes/check.png" id="6_jrja2"]
+[ext_resource type="PackedScene" uid="uid://bgus8xkmst6eh" path="res://scenes/black_screen.tscn" id="7_5o1ar"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rppmo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2u0v6")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xc7jc")
+}],
+"loop": true,
+"name": &"success",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0kbch"]
+size = Vector2(278, 103)
+
+[node name="Cutscene_1" type="Node2D"]
+script = ExtResource("1_rlcg2")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(1663, 849)
+script = ExtResource("5_yr6ar")
+
+[node name="Type1" type="AnimatedSprite2D" parent="Area2D"]
+position = Vector2(-702, -306)
+sprite_frames = SubResource("SpriteFrames_rppmo")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="TextEdit1" type="TextEdit" parent="Area2D"]
+unique_name_in_owner = true
+offset_left = -1459.0
+offset_top = -60.0
+offset_right = -1233.0
+offset_bottom = 71.0
+theme_override_font_sizes/font_size = 70
+placeholder_text = "Type"
+
+[node name="TextEdit2" type="TextEdit" parent="Area2D"]
+unique_name_in_owner = true
+offset_left = -1126.0
+offset_top = -58.0
+offset_right = -900.0
+offset_bottom = 73.0
+theme_override_font_sizes/font_size = 70
+placeholder_text = "Your"
+
+[node name="TextEdit3" type="TextEdit" parent="Area2D"]
+unique_name_in_owner = true
+offset_left = -833.0
+offset_top = -58.0
+offset_right = -564.0
+offset_bottom = 73.0
+theme_override_font_sizes/font_size = 70
+placeholder_text = "Answer"
+
+[node name="TextEdit4" type="TextEdit" parent="Area2D"]
+unique_name_in_owner = true
+offset_left = -510.0
+offset_top = -59.0
+offset_right = -241.0
+offset_bottom = 72.0
+theme_override_font_sizes/font_size = 70
+placeholder_text = "Here"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_0kbch")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(2, 10)
+scale = Vector2(1.36, 1.16)
+texture = ExtResource("6_jrja2")
+
+[node name="GUI" parent="Area2D" instance=ExtResource("4_wh8fp")]
+offset_left = -1663.0
+offset_top = -849.0
+offset_right = -1327.0
+offset_bottom = -587.0
+
+[node name="BlackScreen" parent="." instance=ExtResource("7_5o1ar")]
+position = Vector2(797.002, 333)

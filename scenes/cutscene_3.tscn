@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://xp4n3tvlanqk"]
+
+[ext_resource type="Texture2D" uid="uid://bxcrvt3ofngvv" path="res://assets/cutscenes/Final_1.png" id="1_y0k4t"]
+[ext_resource type="Texture2D" uid="uid://ywsdwjillbcd" path="res://assets/cutscenes/Final_3.png" id="2_ml7ea"]
+[ext_resource type="Texture2D" uid="uid://10cphm41of7f" path="res://assets/cutscenes/Final_2.png" id="3_o21qb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1y7xe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_y0k4t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ml7ea")
+}],
+"loop": true,
+"name": &"finish",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_o21qb")
+}],
+"loop": true,
+"name": &"finish_raw",
+"speed": 5.0
+}]
+
+[node name="Cutscene_NoDict_NoAccess" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(735, 417.5)
+scale = Vector2(0.763542, 0.769444)
+sprite_frames = SubResource("SpriteFrames_1y7xe")
+autoplay = "default"

@@ -27,6 +27,7 @@ func _on_body_entered(body: Node2D) -> void:
 				if dialog_puma_thx_ran == false:
 					Dialogic.start("dialog_puma_thanks")
 					dialog_puma_thx_ran = true
+					Global.milk_given = true
 				else:
 					Dialogic.start("dialog_puma_milk")
 			else:

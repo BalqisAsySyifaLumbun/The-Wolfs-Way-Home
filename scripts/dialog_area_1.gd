@@ -34,6 +34,7 @@ func _on_body_entered(body: Node2D) -> void:
 			if dialog_one_ran == true:
 				Dialogic.start("dialog_3")
 				dialog_three_ran = true
+				Global.snack_given = true
 			else:
 				Dialogic.start("dialog_1")
 				Global.set_database("word")

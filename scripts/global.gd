@@ -3,6 +3,10 @@ extends Node
 
 var database_global = ["Terms Found: "]
 var is_counting = false  
+var chapter_1_finish = false
+var snack_given = false
+var milk_given = false
+var mister_mole = false
 	
 # You can add a method to get the database if needed
 func get_database() -> Array:

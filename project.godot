@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Wolf - Protector of The Fanged"
-run/main_scene="res://scenes/scene_1.tscn"
+run/main_scene="res://scenes/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 boot_splash/image="res://assets/wallpaper/wallpaper1.png"
 config/icon="res://assets/wolf/wolf5.png"
@@ -25,6 +25,8 @@ Global="*res://scripts/global.gd"
 
 directories/dch_directory={}
 directories/dtl_directory={
+"cutscene_final_hard": "res://assets/styles/cutscene_final_hard.dtl",
+"cutscene_wrong": "res://assets/styles/cutscene_wrong.dtl",
 "dialog_1": "res://assets/styles/dialog_1.dtl",
 "dialog_2": "res://assets/styles/dialog_2.dtl",
 "dialog_3": "res://assets/styles/dialog_3.dtl",
@@ -36,11 +38,15 @@ directories/dtl_directory={
 "dialog_puma_milk": "res://assets/styles/dialog_puma_milk.dtl",
 "dialog_puma_thanks": "res://assets/styles/dialog_puma_thanks.dtl",
 "dialog_retry": "res://assets/styles/dialog_retry.dtl",
+"entry": "res://assets/styles/entry.dtl",
+"entry_fail": "res://assets/styles/entry_fail.dtl",
 "hurry": "res://assets/styles/hurry.dtl",
 "mine_mole_talk": "res://assets/styles/mine_mole_talk.dtl",
 "monolog_gar": "res://assets/styles/monolog_gar.dtl",
 "monolog_stop": "res://assets/styles/monolog_stop.dtl",
-"monolog_stopsign": "res://assets/styles/monolog_stopsign.dtl"
+"monolog_stopsign": "res://assets/styles/monolog_stopsign.dtl",
+"please_abort": "res://assets/styles/please_abort.dtl",
+"puma_conservation": "res://assets/styles/puma_conservation.dtl"
 }
 layout/style_list=["res://assets/styles/test.tres"]
 layout/default_style="res://assets/styles/test.tres"

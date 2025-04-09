@@ -14,5 +14,8 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.get_name() == "Player":
-		print("Player entered Area2D")
-		Dialogic.start("mine_mole_talk")
+		if Global.mister_mole == false:
+			print("Player entered Area2D")
+			Dialogic.start("mine_mole_talk")
+		else:
+			Dialogic.start("please_abort")
