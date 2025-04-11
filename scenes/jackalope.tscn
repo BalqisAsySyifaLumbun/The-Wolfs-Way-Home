@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://50ixr4jentgb"]
+
+[ext_resource type="Script" path="res://scripts/jackalope.gd" id="1_rl5i8"]
+[ext_resource type="Texture2D" uid="uid://dkk4herq4okqi" path="res://assets/items/jackalope.png" id="2_xi08a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pcwrb"]
+size = Vector2(289, 191)
+
+[node name="Jackalope" type="Area2D"]
+script = ExtResource("1_rl5i8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(99, 100)
+scale = Vector2(0.965025, 1)
+texture = ExtResource("2_xi08a")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(156.5, 99.5)
+shape = SubResource("RectangleShape2D_pcwrb")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = 427.0
+offset_top = 30.0
+offset_right = 634.0
+offset_bottom = 82.0
+placeholder_text = "Guess what animal I am!"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://die4vadwnmiob"
+path="res://.godot/imported/Desperating Time.ogg-51673b2d55e11b29fd991d957fa6b796.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/ost/Desperating Time.ogg"
+dest_files=["res://.godot/imported/Desperating Time.ogg-51673b2d55e11b29fd991d957fa6b796.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

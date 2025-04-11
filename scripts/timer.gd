@@ -24,7 +24,14 @@ func _process(delta: float) -> void:
 			if time_left <= 0:
 				print("Countdown finished!")
 				Global.is_counting = false
-				get_tree().change_scene_to_file("res://scenes/retry.tscn")
+				Global.pickup += 1
+				if Global.pickup > 3:
+					Global.stop_move = true
+					Dialogic.start('preretry2')
+					await Dialogic.timeline_ended
+					get_tree().change_scene_to_file("res://scenes/true_retry_scene.tscn")
+				else:
+					get_tree().change_scene_to_file("res://scenes/retry.tscn")
 
 # Updates the label with the remaining time in seconds
 func update_time_display() -> void:

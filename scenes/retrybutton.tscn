@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmi5k2y5kru42"]
+
+[ext_resource type="Texture2D" uid="uid://v56h68i6ykgg" path="res://assets/cutscenes/retry button.png" id="1_c76h3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aloe5"]
+size = Vector2(220, 121.5)
+
+[node name="Retry" type="Area2D"]
+position = Vector2(-214, -239)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(535, 1229)
+shape = SubResource("RectangleShape2D_aloe5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(531, 1217)
+texture = ExtResource("1_c76h3")

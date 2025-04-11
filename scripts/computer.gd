@@ -3,8 +3,7 @@ extends Area2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$CollisionShape2D/CanvasLayer2/Label.visible = false
-	
+	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -14,5 +13,5 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.get_name() == "Player":
-		$CollisionShape2D/CanvasLayer2/Label.visible = true # Replace with function body.
-		Global.is_counting = true
+		Global.is_counting = false
+		get_tree().change_scene_to_file("res://scenes/computer_scene.tscn")

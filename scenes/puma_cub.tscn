@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c8mhvvkvye0ro" path="res://assets/puma/pumacub2.png" id="2_0rcy8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mvpxo"]
-size = Vector2(231, 79)
+size = Vector2(498, 83)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tmmgy"]
 animations = [{
@@ -30,7 +30,7 @@ animations = [{
 script = ExtResource("1_hljfi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(10.5, 13.5)
+position = Vector2(-96, 11.5)
 shape = SubResource("RectangleShape2D_mvpxo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

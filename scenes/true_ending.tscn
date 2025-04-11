@@ -1,0 +1,58 @@
+[gd_scene load_steps=10 format=3 uid="uid://bpcnuxgcuyw76"]
+
+[ext_resource type="Texture2D" uid="uid://bp0sqfob3j8na" path="res://assets/cutscenes/Angry_Ending.png" id="1_j47uq"]
+[ext_resource type="Texture2D" uid="uid://cabm71pahr6xh" path="res://assets/cutscenes/Angry_Ending2.png" id="2_uyiba"]
+[ext_resource type="PackedScene" uid="uid://bgus8xkmst6eh" path="res://scenes/black_screen.tscn" id="3_0n6sr"]
+[ext_resource type="Script" path="res://scripts/true_ending.gd" id="3_6e5dk"]
+[ext_resource type="PackedScene" uid="uid://7b2gxxgjxeso" path="res://scenes/quit.tscn" id="4_356hu"]
+[ext_resource type="Script" path="res://scripts/backtomenu.gd" id="5_qgotr"]
+[ext_resource type="Texture2D" uid="uid://rsk3lkbhhks7" path="res://assets/cutscenes/menu.png" id="6_8stdr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wjwro"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_j47uq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_uyiba")
+}],
+"loop": true,
+"name": &"end",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c1wjl"]
+size = Vector2(216, 102)
+
+[node name="TrueEnding" type="AnimatedSprite2D"]
+position = Vector2(958, 549)
+sprite_frames = SubResource("SpriteFrames_wjwro")
+animation = &"end"
+autoplay = "default"
+script = ExtResource("3_6e5dk")
+
+[node name="quit" parent="." instance=ExtResource("4_356hu")]
+visible = false
+position = Vector2(900, -447)
+
+[node name="BlackScreen" parent="." instance=ExtResource("3_0n6sr")]
+position = Vector2(-137.998, 207)
+
+[node name="Return" type="Area2D" parent="."]
+position = Vector2(-851, 423)
+script = ExtResource("5_qgotr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Return"]
+position = Vector2(98, 41)
+shape = SubResource("RectangleShape2D_c1wjl")
+
+[node name="Sprite2D" type="Sprite2D" parent="Return"]
+visible = false
+position = Vector2(116, 36)
+texture = ExtResource("6_8stdr")

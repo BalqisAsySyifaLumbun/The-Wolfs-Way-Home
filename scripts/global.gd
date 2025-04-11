@@ -7,6 +7,11 @@ var chapter_1_finish = false
 var snack_given = false
 var milk_given = false
 var mister_mole = false
+var stop_move = false
+var run_dialog_opening = false
+var incorrect_password = 0
+var pickup = 0
+var met_jackalope = false
 	
 # You can add a method to get the database if needed
 func get_database() -> Array:

@@ -54,5 +54,7 @@ func _input_event(viewport, event, shape_idx):
 				$Sprite2D.visible = false
 				$Type1.animation = "success"
 				Dialogic.start("puma_conservation")
+				await Dialogic.timeline_ended
+				get_tree().change_scene_to_file("res://scenes/chapter_1_end.tscn")
 				
 			

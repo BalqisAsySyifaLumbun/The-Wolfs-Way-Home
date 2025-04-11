@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://jed8sid33pg3"
+path="res://.godot/imported/Recording (5).mp3-72899f1e6fa92f11c891ab513e8072f1.mp3str"
+
+[deps]
+
+source_file="res://assets/ost/Recording (5).mp3"
+dest_files=["res://.godot/imported/Recording (5).mp3-72899f1e6fa92f11c891ab513e8072f1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

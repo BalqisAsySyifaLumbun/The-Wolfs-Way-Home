@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://binuifx430ajq"]
+
+[ext_resource type="Script" path="res://scripts/antiflea.gd" id="1_pus07"]
+[ext_resource type="Texture2D" uid="uid://bn7kupvxttx2s" path="res://assets/items/New folder/export202504012318365895.png" id="1_xbhhr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_078j2"]
+size = Vector2(50, 94)
+
+[node name="Antiflea" type="Area2D"]
+script = ExtResource("1_pus07")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(15, 37)
+shape = SubResource("RectangleShape2D_078j2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(16.25, 42)
+scale = Vector2(0.445, 0.52)
+texture = ExtResource("1_xbhhr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

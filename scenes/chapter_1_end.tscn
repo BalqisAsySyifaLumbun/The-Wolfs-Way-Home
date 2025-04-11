@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxcmiecunhurn"]
+
+[ext_resource type="Texture2D" uid="uid://be1veoqskcka4" path="res://assets/cutscenes/Chapter 1 End.png" id="1_bojay"]
+[ext_resource type="PackedScene" uid="uid://bgus8xkmst6eh" path="res://scenes/black_screen.tscn" id="2_pc2cg"]
+[ext_resource type="Script" path="res://scripts/transition.gd" id="2_rfej3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lhrbk"]
+size = Vector2(1937, 1131)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_rfej3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(962.5, 560.5)
+scale = Vector2(1.00156, 1.03981)
+texture = ExtResource("1_bojay")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(958.5, 555.5)
+shape = SubResource("RectangleShape2D_lhrbk")
+
+[node name="BlackScreen" parent="Area2D" instance=ExtResource("2_pc2cg")]
+position = Vector2(863.002, 265)

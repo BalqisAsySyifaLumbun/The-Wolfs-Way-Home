@@ -1,0 +1,132 @@
+[gd_scene load_steps=11 format=3 uid="uid://f0xhlrf4qtxk"]
+
+[ext_resource type="Texture2D" uid="uid://ywsdwjillbcd" path="res://assets/cutscenes/Final_3.png" id="1_lity0"]
+[ext_resource type="Script" path="res://scripts/input_computer.gd" id="1_v35xv"]
+[ext_resource type="Texture2D" uid="uid://bxcrvt3ofngvv" path="res://assets/cutscenes/Final_1.png" id="2_fyu8s"]
+[ext_resource type="Texture2D" uid="uid://b5f7npl6wr0ua" path="res://assets/cutscenes/Final_4.png" id="3_tveio"]
+[ext_resource type="Texture2D" uid="uid://10cphm41of7f" path="res://assets/cutscenes/Final_2.png" id="4_xreo1"]
+[ext_resource type="Texture2D" uid="uid://nx0c0lg0uogx" path="res://assets/cutscenes/check.png" id="6_udwc7"]
+[ext_resource type="PackedScene" uid="uid://bgus8xkmst6eh" path="res://scenes/black_screen.tscn" id="7_6trua"]
+[ext_resource type="PackedScene" uid="uid://dfsrbx8wjctba" path="res://scenes/gui.tscn" id="7_ulkut"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_40bw3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lity0")
+}],
+"loop": true,
+"name": &"dict",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fyu8s")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_tveio")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_xreo1")
+}],
+"loop": true,
+"name": &"no_dict",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a7bb4"]
+size = Vector2(237, 126)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Input" type="Area2D" parent="."]
+script = ExtResource("1_v35xv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Input"]
+position = Vector2(964, 548)
+sprite_frames = SubResource("SpriteFrames_40bw3")
+animation = &"idle"
+
+[node name="TextEdit" type="TextEdit" parent="Input"]
+offset_left = 266.0
+offset_top = 493.0
+offset_right = 1666.0
+offset_bottom = 665.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 100
+placeholder_text = "Enter Password.."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Input"]
+position = Vector2(1568.5, 952)
+shape = SubResource("RectangleShape2D_a7bb4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Input"]
+position = Vector2(1565, 953)
+texture = ExtResource("6_udwc7")
+
+[node name="TextEdit3" type="TextEdit" parent="Input"]
+visible = false
+offset_left = 548.0
+offset_top = 396.0
+offset_right = 636.0
+offset_bottom = 500.0
+theme_override_font_sizes/font_size = 60
+
+[node name="TextEdit2" type="TextEdit" parent="Input"]
+visible = false
+offset_left = 239.0
+offset_top = 395.0
+offset_right = 533.0
+offset_bottom = 499.0
+theme_override_font_sizes/font_size = 60
+placeholder_text = "Type."
+
+[node name="TextEdit5" type="TextEdit" parent="Input"]
+visible = false
+offset_left = 956.0
+offset_top = 396.0
+offset_right = 1150.0
+offset_bottom = 500.0
+theme_override_font_sizes/font_size = 60
+
+[node name="TextEdit4" type="TextEdit" parent="Input"]
+visible = false
+offset_left = 648.0
+offset_top = 396.0
+offset_right = 942.0
+offset_bottom = 500.0
+theme_override_font_sizes/font_size = 60
+
+[node name="TextEdit7" type="TextEdit" parent="Input"]
+visible = false
+offset_left = 1368.0
+offset_top = 396.0
+offset_right = 1587.0
+offset_bottom = 500.0
+theme_override_font_sizes/font_size = 60
+
+[node name="TextEdit6" type="TextEdit" parent="Input"]
+visible = false
+offset_left = 1162.0
+offset_top = 396.0
+offset_right = 1356.0
+offset_bottom = 500.0
+theme_override_font_sizes/font_size = 60
+
+[node name="GUI" parent="." instance=ExtResource("7_ulkut")]
+offset_left = 1672.0
+offset_right = 2008.0
+
+[node name="BlackScreen" parent="." instance=ExtResource("7_6trua")]
+position = Vector2(1074, 473)

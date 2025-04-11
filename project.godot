@@ -27,6 +27,7 @@ directories/dch_directory={}
 directories/dtl_directory={
 "cutscene_final_hard": "res://assets/styles/cutscene_final_hard.dtl",
 "cutscene_wrong": "res://assets/styles/cutscene_wrong.dtl",
+"cutscene_wrong_2": "res://assets/styles/cutscene_wrong_2.dtl",
 "dialog_1": "res://assets/styles/dialog_1.dtl",
 "dialog_2": "res://assets/styles/dialog_2.dtl",
 "dialog_3": "res://assets/styles/dialog_3.dtl",
@@ -38,18 +39,52 @@ directories/dtl_directory={
 "dialog_puma_milk": "res://assets/styles/dialog_puma_milk.dtl",
 "dialog_puma_thanks": "res://assets/styles/dialog_puma_thanks.dtl",
 "dialog_retry": "res://assets/styles/dialog_retry.dtl",
+"donteat_jackalope": "res://assets/styles/donteat_jackalope.dtl",
+"ending": "res://assets/styles/ending.dtl",
 "entry": "res://assets/styles/entry.dtl",
 "entry_fail": "res://assets/styles/entry_fail.dtl",
+"finish_good": "res://assets/styles/finish_good.dtl",
+"finish_great": "res://assets/styles/finish_great.dtl",
+"found": "res://assets/styles/found.dtl",
+"haha_jackalope": "res://assets/styles/haha_jackalope.dtl",
+"hi_wolf": "res://assets/styles/hi_wolf.dtl",
 "hurry": "res://assets/styles/hurry.dtl",
 "mine_mole_talk": "res://assets/styles/mine_mole_talk.dtl",
 "monolog_gar": "res://assets/styles/monolog_gar.dtl",
 "monolog_stop": "res://assets/styles/monolog_stop.dtl",
 "monolog_stopsign": "res://assets/styles/monolog_stopsign.dtl",
 "please_abort": "res://assets/styles/please_abort.dtl",
-"puma_conservation": "res://assets/styles/puma_conservation.dtl"
+"preretry2": "res://assets/styles/preretry2.dtl",
+"pretryagain": "res://assets/styles/pretryagain.dtl",
+"puma_conservation": "res://assets/styles/puma_conservation.dtl",
+"send": "res://assets/styles/send.dtl",
+"wrong": "res://assets/styles/wrong.dtl",
+"wrong_wrong": "res://assets/styles/wrong_wrong.dtl"
 }
 layout/style_list=["res://assets/styles/test.tres"]
 layout/default_style="res://assets/styles/test.tres"
+glossary/default_case_sensitive=true
+variables={}
+extensions_folder="res://addons/dialogic_additions"
+text/letter_speed=0.01
+text/initial_text_reveal_skippable=true
+text/text_reveal_skip_delay=0.1
+text/advance_delay=0.1
+text/autoadvance_per_character_delay=0.1
+text/autoadvance_ignored_characters_enabled=true
+audio/max_channels=4.0
+animations/join_default_length=0.5
+animations/join_default_wait=true
+animations/leave_default_length=0.5
+animations/leave_default_wait=true
+animations/cross_fade_default_length=0.5
+choices/autofocus_first=true
+choices/delay=0.2
+choices/reveal_delay=0
+choices/reveal_by_input=false
+save/autosave_delay=60.0
+save/encryption_on_exports_only=true
+text/autopauses={}
 
 [display]
 

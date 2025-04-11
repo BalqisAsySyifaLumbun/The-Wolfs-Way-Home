@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://cbjrvpglihmd8"]
+[gd_scene load_steps=4 format=3 uid="uid://cbjrvpglihmd8"]
 
 [ext_resource type="Texture2D" uid="uid://bep84htmib7yv" path="res://assets/items/New folder/export202504012314109821.png" id="1_aqmgl"]
+[ext_resource type="Script" path="res://scripts/computer.gd" id="1_qpgk2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b4y5d"]
 size = Vector2(558, 587)
 
 [node name="Computer" type="Area2D"]
+script = ExtResource("1_qpgk2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_aqmgl")
@@ -13,3 +15,5 @@ texture = ExtResource("1_aqmgl")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-4, 62.5)
 shape = SubResource("RectangleShape2D_b4y5d")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

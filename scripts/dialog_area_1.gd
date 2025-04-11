@@ -32,11 +32,17 @@ func _on_body_entered(body: Node2D) -> void:
 			Dialogic.start("dialog_4")
 		if "shot" in Global.get_database() and dialog_three_ran == false:  # Check if player has the get_database method
 			if dialog_one_ran == true:
+				Global.stop_move = true
 				Dialogic.start("dialog_3")
+				await Dialogic.timeline_ended
+				Global.stop_move = false
 				dialog_three_ran = true
 				Global.snack_given = true
 			else:
+				Global.stop_move = true
 				Dialogic.start("dialog_1")
+				await Dialogic.timeline_ended
+				Global.stop_move = false
 				Global.set_database("word")
 				dialog_one_ran = true
 		elif "word" in Global.get_database():  # Check if player has the get_database method
@@ -44,6 +50,9 @@ func _on_body_entered(body: Node2D) -> void:
 				Dialogic.start("dialog_2")
 				dialog_two_ran = true
 		else:
+			Global.stop_move = true
 			Dialogic.start("dialog_1")
+			await Dialogic.timeline_ended
+			Global.stop_move = false
 			Global.set_database("word")
 			dialog_one_ran = true

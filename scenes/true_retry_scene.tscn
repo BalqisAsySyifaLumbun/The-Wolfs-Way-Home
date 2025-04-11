@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://cmqyk43733j0t"]
+
+[ext_resource type="Texture2D" uid="uid://dhfr1qg2emjsg" path="res://assets/cutscenes/Help_Ending.png" id="1_gv6gd"]
+[ext_resource type="Texture2D" uid="uid://duhx71xsk7vvm" path="res://assets/cutscenes/gws.png" id="2_6j5jg"]
+[ext_resource type="PackedScene" uid="uid://bgus8xkmst6eh" path="res://scenes/black_screen.tscn" id="2_cdynv"]
+[ext_resource type="PackedScene" uid="uid://7b2gxxgjxeso" path="res://scenes/quit.tscn" id="3_rqvrm"]
+[ext_resource type="PackedScene" uid="uid://bmi5k2y5kru42" path="res://scenes/retrybutton.tscn" id="4_kyqnv"]
+[ext_resource type="Script" path="res://scripts/retrybutton.gd" id="5_qqg66"]
+
+[node name="True Retry Scene" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(963, 544)
+texture = ExtResource("1_gv6gd")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(536, 210)
+rotation = -0.120428
+scale = Vector2(2, 2)
+texture = ExtResource("2_6j5jg")
+
+[node name="quit" parent="." instance=ExtResource("3_rqvrm")]
+position = Vector2(1854, 101)
+
+[node name="Retry" parent="." instance=ExtResource("4_kyqnv")]
+script = ExtResource("5_qqg66")
+
+[node name="BlackScreen" parent="." instance=ExtResource("2_cdynv")]
+position = Vector2(934.002, 405)
