@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgkjvfw8d8k62"]
+
+[ext_resource type="Texture2D" uid="uid://bqr0u4ih7cgib" path="res://assets/hint/hint.png" id="1_bw5ld"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ldfm"]
+size = Vector2(99.5, 101)
+
+[node name="Hint_Area" type="Area2D"]
+
+[node name="Hint" type="Sprite2D" parent="."]
+position = Vector2(-1, 0)
+texture = ExtResource("1_bw5ld")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.75, 0.5)
+shape = SubResource("RectangleShape2D_8ldfm")

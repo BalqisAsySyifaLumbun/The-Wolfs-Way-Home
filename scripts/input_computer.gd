@@ -1,6 +1,6 @@
 extends Area2D
 
-
+var on_press = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -8,8 +8,22 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
-
+	if Input.is_key_pressed(KEY_H):
+		if on_press == false:
+			on_press = true
+			$RichTextLabel.visible = true
+			$RichTextLabel.modulate = Color(0,0,0,0.5)
+			if Global.access_pass == false:
+				$RichTextLabel.text = "The Password is Access"
+			else:
+				if Global.met_jackalope == true:
+					$RichTextLabel.text = "Imagine 'pleading to humans to abort ones' mining permit', haha definitely not us"
+				else:
+					$RichTextLabel.text = "I'm only in your imagination, but what sentence does sound like 'Pleaseee, abort our mine permit' or something like that?"
+		else:
+			on_press = false
+			$RichTextLabel.visible = false
+			
 func _input_event(viewport, event, shape_idx):
 	# Check if it's a mouse button event (left click)
 	if event is InputEventMouseButton:
@@ -20,7 +34,11 @@ func _input_event(viewport, event, shape_idx):
 				if $TextEdit.get_text().to_upper() != 'ACCESS':
 					Global.incorrect_password += 1
 					Dialogic.start("cutscene_wrong_2")
+					if Global.incorrect_password >=1:
+						$RichTextLabel.visible = true
+						$Hint_Area.visible = true
 				else:
+					Global.access_pass = true
 					$TextEdit.visible = false
 					$TextEdit2.visible = true
 					$TextEdit4.visible = true
@@ -58,11 +76,13 @@ func _input_event(viewport, event, shape_idx):
 						$TextEdit3.visible = false
 						if Global.met_jackalope == false:
 							$AnimatedSprite2D.animation = "no_dict"
+							$RichTextLabel.visible = false
 							Dialogic.start("finish_good")
 							await Dialogic.timeline_ended
 							$AnimatedSprite2D.animation = "dict"
 						if Global.met_jackalope == true:
 							$AnimatedSprite2D.animation = "dict"
+							$RichTextLabel.visible = false
 							Dialogic.start("finish_great")
 							await Dialogic.timeline_ended
 							$AnimatedSprite2D.animation = "new_animation"

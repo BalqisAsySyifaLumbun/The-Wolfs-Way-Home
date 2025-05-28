@@ -14,6 +14,7 @@ config/name="Wolf - Protector of The Fanged"
 run/main_scene="res://scenes/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 boot_splash/image="res://assets/wallpaper/wallpaper1.png"
+boot_splash/fullsize=false
 config/icon="res://assets/wolf/wolf5.png"
 
 [autoload]
@@ -88,6 +89,8 @@ text/autopauses={}
 
 [display]
 
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 window/size/mode=3
 
 [editor_plugins]

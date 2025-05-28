@@ -12,6 +12,8 @@ var run_dialog_opening = false
 var incorrect_password = 0
 var pickup = 0
 var met_jackalope = false
+#add access pass
+var access_pass = false
 	
 # You can add a method to get the database if needed
 func get_database() -> Array:

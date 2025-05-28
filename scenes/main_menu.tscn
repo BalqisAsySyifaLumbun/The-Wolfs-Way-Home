@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://3hh406miw56n"]
+[gd_scene load_steps=8 format=3 uid="uid://3hh406miw56n"]
 
 [ext_resource type="Texture2D" uid="uid://c3b6t6jl2oqnn" path="res://assets/wallpaper/wallpaper1.png" id="1_0psvl"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_v6036"]
 [ext_resource type="Texture2D" uid="uid://bwyk8i8410r2w" path="res://assets/items/New folder/export202504012306374075.png" id="2_2e4ad"]
 [ext_resource type="Script" path="res://scripts/play_onclick.gd" id="3_u6qso"]
 [ext_resource type="PackedScene" uid="uid://7b2gxxgjxeso" path="res://scenes/quit.tscn" id="4_e3br0"]
@@ -10,6 +11,7 @@
 size = Vector2(232, 147)
 
 [node name="Main Menu" type="Node2D"]
+script = ExtResource("1_v6036")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(999.001, 543.5)

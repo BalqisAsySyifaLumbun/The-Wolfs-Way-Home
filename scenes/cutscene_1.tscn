@@ -94,5 +94,16 @@ offset_top = -849.0
 offset_right = -1327.0
 offset_bottom = -587.0
 
+[node name="RichTextLabel" type="RichTextLabel" parent="Area2D"]
+visible = false
+offset_left = -1259.0
+offset_top = -206.0
+offset_right = -355.0
+offset_bottom = -81.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 40
+text = "Press H for hint!"
+
 [node name="BlackScreen" parent="." instance=ExtResource("7_5o1ar")]
+visible = false
 position = Vector2(797.002, 333)

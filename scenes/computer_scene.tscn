@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://f0xhlrf4qtxk"]
+[gd_scene load_steps=12 format=3 uid="uid://f0xhlrf4qtxk"]
 
 [ext_resource type="Texture2D" uid="uid://ywsdwjillbcd" path="res://assets/cutscenes/Final_3.png" id="1_lity0"]
 [ext_resource type="Script" path="res://scripts/input_computer.gd" id="1_v35xv"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://nx0c0lg0uogx" path="res://assets/cutscenes/check.png" id="6_udwc7"]
 [ext_resource type="PackedScene" uid="uid://bgus8xkmst6eh" path="res://scenes/black_screen.tscn" id="7_6trua"]
 [ext_resource type="PackedScene" uid="uid://dfsrbx8wjctba" path="res://scenes/gui.tscn" id="7_ulkut"]
+[ext_resource type="PackedScene" uid="uid://bgkjvfw8d8k62" path="res://scenes/hint_area.tscn" id="9_wf8lr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_40bw3"]
 animations = [{
@@ -124,9 +125,31 @@ offset_right = 1356.0
 offset_bottom = 500.0
 theme_override_font_sizes/font_size = 60
 
+[node name="RichTextLabel" type="RichTextLabel" parent="Input"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 267.0
+offset_top = 661.0
+offset_right = 1669.0
+offset_bottom = 859.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 60
+text = "Click H for Hint!"
+
+[node name="Hint_Area" parent="Input" instance=ExtResource("9_wf8lr")]
+visible = false
+position = Vector2(1376, 955)
+
 [node name="GUI" parent="." instance=ExtResource("7_ulkut")]
 offset_left = 1672.0
 offset_right = 2008.0
 
 [node name="BlackScreen" parent="." instance=ExtResource("7_6trua")]
+visible = false
 position = Vector2(1074, 473)
