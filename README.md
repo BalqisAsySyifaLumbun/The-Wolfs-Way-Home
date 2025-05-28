@@ -20,18 +20,18 @@ check_1_onclick.gd update
 input_computer.gd update
 
 func _process(delta: float) -> void:
+	#Implementasi Hint dengan menekan tombol H
 	if Input.is_key_pressed(KEY_H):
-		if on_press == false:
-			on_press = true
-			$RichTextLabel.visible = true
-			$RichTextLabel.modulate = Color(0,0,0,0.5)
-			if Global.access_pass == false:
-				$RichTextLabel.text = "The Password is Access"
-			else:
-				if Global.met_jackalope == true:
-					$RichTextLabel.text = "Imagine 'pleading to humans to abort ones' mining permit', haha definitely not us"
-				else:
-					$RichTextLabel.text = "I'm only in your imagination, but what sentence does sound like 'Pleaseee, abort our mine permit' or something like that?"
+		$RichTextLabel.visible = true
+		$RichTextLabel.modulate = Color(0,0,0,0.5)
+		if Global.access_pass == false:
+			$RichTextLabel.text = "The Password is Access"
 		else:
-			on_press = false
 			$RichTextLabel.visible = false
+			$RichTextLabel2.modulate = Color(0,0,0,0.5)
+			$RichTextLabel2.visible = true
+			if Global.met_jackalope == true:
+				$RichTextLabel2.text = "Imagine 'pleading to humans to abort ones' mining permit', haha definitely not us"
+			else:
+				$RichTextLabel2.text = "I'm only in your imagination, but what sentence does sound like 'Pleaseee, abort our mine permit' or something like that?"
+			
