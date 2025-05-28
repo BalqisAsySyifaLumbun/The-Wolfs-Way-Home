@@ -8,6 +8,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	#Implementasi Hint dengan menekan tombol H
 	if Input.is_key_pressed(KEY_H):
 		if on_press == false:
 			on_press = true
